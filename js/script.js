@@ -1,10 +1,8 @@
-// Dall'oggetto globale Vue, estrai in una variabile la funzione "createApp"
 const { createApp } = Vue;
 
 // invochiamo la funzione passando come argomento un oggetto
 
-// crea l'istanza di Vue. Sull'istanza invochiamo la funzione
-// mount. Questa si aspetta come un argomento un selettore html valido
+// mount. 
 createApp({
     // data: function () {}
     data() {
@@ -12,7 +10,6 @@ createApp({
         return {
             utenti: [{
                 name: 'Michele',
-                avatar: 'imgs/avatar_1.jpg',
                 avatar: '_1',
                 visible: true,
                 messages: [{
@@ -34,7 +31,6 @@ createApp({
             },
             {
                 name: 'Fabio',
-                avatar: 'imgs/avatar_2.jpg',
                 avatar: '_2',
                 visible: true,
                 messages: [{
@@ -56,7 +52,6 @@ createApp({
             },
             {
                 name: 'Samuele',
-                avatar: 'imgs/avatar_3.jpg',
                 avatar: '_3',
                 visible: true,
                 messages: [{
@@ -78,7 +73,6 @@ createApp({
             },
             {
                 name: 'Luisa',
-                avatar: 'imgs/avatar_4.jpg',
                 avatar: '_6',
                 visible: true,
                 messages: [{
@@ -93,9 +87,17 @@ createApp({
                 }
                 ],
             },
-            ]
+            ],
+            utenteSelezionato: null,
         };
+
     },
     methods: {
+
+    },
+    beforeMount() {
+        this.utenteSelezionato = this.utenti[0]
     }
+
+
 }).mount("#app")
