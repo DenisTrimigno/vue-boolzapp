@@ -13,6 +13,7 @@ createApp({
             utenti: [{
                 name: 'Michele',
                 avatar: 'imgs/avatar_1.jpg',
+                avatar: '_1',
                 visible: true,
                 messages: [{
                     date: '10/01/2020 15:30:55',
@@ -34,6 +35,7 @@ createApp({
             {
                 name: 'Fabio',
                 avatar: 'imgs/avatar_2.jpg',
+                avatar: '_2',
                 visible: true,
                 messages: [{
                     date: '20/03/2020 16:30:00',
@@ -55,6 +57,7 @@ createApp({
             {
                 name: 'Samuele',
                 avatar: 'imgs/avatar_3.jpg',
+                avatar: '_3',
                 visible: true,
                 messages: [{
                     date: '28/03/2020 10:10:40',
@@ -76,6 +79,7 @@ createApp({
             {
                 name: 'Luisa',
                 avatar: 'imgs/avatar_4.jpg',
+                avatar: '_6',
                 visible: true,
                 messages: [{
                     date: '10/01/2020 15:30:55',
@@ -91,10 +95,7 @@ createApp({
             },
             ]
         };
-
     },
     methods: {
-
     }
-
 }).mount("#app")

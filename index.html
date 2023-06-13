@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>vue-boolzapp</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
     <div id="app">
         <!-- contenitore prinicipale di sfondo -->
         <main>
@@ -25,10 +20,8 @@
                     <div class="sf-nav-verde">
                         <div class="row justify-content-center g-0">
                             <div class="col-10 d-flex contenitore-chat">
-
                                 <!-- contenitore utenti sx ----------------------------------------->
                                 <div class="d-flex flex-column side-w">
-
                                     <!-- navbar contenitore utenti ----------->
                                     <div class="d-flex justify-content-between align-items-center bg-hat-nav p-2">
                                         <div>
@@ -42,7 +35,6 @@
                                             <i class="fa-solid fa-ellipsis-vertical "></i>
                                         </div>
                                     </div>
-
                                     <!-- notifiche contenitore utenti -->
                                     <div class="bg-notifiche d-flex align-items-center p-2 py-2">
                                         <div>
@@ -58,7 +50,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <!-- barra ricerca contentitore utenti -->
                                     <div class="p-2 bg- bg-hat-nav">
                                         <form class="container-fluid">
@@ -70,22 +61,24 @@
                                             </div>
                                         </form>
                                     </div>
-
                                     <!-- card utenti -->
-                                    <div class=" flex-grow-1 overflow-auto d-flex flex-column" 
-                                    v-for="(listaHTML, i) in utenti">
+                                    <div class=" flex-grow-1 overflow-auto d-flex flex-column">
                                         <!-- card -->
-                                        <label for="">
-                                            <div class="d-flex p-2 bordo-inf-card">
+                                        <div v-for="(utente, i) in utenti">
+                                        <!-- v-for sopra  ----------------------------------------->
+
+                                            <div class="d-flex align-items-center p-2 bordo-inf-card">
                                                 <div>
-                                                    <img class="avatar-img" src="imgs/avatar_1.jpg" alt="">
+                                                    <img :src="`imgs/avatar ${utente.avatar}.jpg`" alt="">
+                                                    <img :src="`imgs/avatar${utente.avatar}.jpg`" alt="">
                                                 </div>
-                                                <div>
-                                                    <span class="p-2">{{listaHTML.name}}</span>
-                                                    <div class="small px-2">{{}}</div>
+                                                <div class="flex-grow-1">
+                                                    <span class="p-2">{{utente.name}}</span>
+                                                    <div class="small px-2 text-color">ultimo messaggio inviato il</div>
                                                 </div>
+                                                <small class="align-self-baseline text-color">12:00</small>
                                             </div>
-                                        </label>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- contenitore chat laterale dx ------------------------------------->
@@ -109,15 +102,15 @@
                                     </div>
                                     <!-- footer chat -->
                                     <div class="p-2 d-flex justify-content-between align-items-center text-secondary">
-
-                                        <div><a class="px-4 text-color" href=""><i class="fa-regular fa-face-grin-hearts"></i></a></div>
-                                        
+                                        <div><a class="px-4 text-color" href=""><i
+                                                    class="fa-regular fa-face-grin-hearts"></i></a></div>
                                         <div class="input-group flex-nowrap">
                                             <input type="text" class="form-control" placeholder=""
                                                 aria-label="Username" aria-describedby="addon-wrapping">
                                         </div>
                                         <div>
-                                            <a class="px-4 text-color" href=""><i class="fa-solid fa-microphone"></i></a>
+                                            <a class="px-4 text-color" href=""><i
+                                                    class="fa-solid fa-microphone"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -125,14 +118,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
     </div>
     </main>
     </div>
-
     <!-- javascript -->
-    <script src="js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
-
 </html>
