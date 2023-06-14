@@ -2,7 +2,8 @@ const { createApp } = Vue;
 
 // invochiamo la funzione passando come argomento un oggetto
 
-// mount. 
+// crea l'istanza di Vue. Sull'istanza invochiamo la funzione
+// mount. Questa si aspetta come un argomento un selettore html valido
 createApp({
     // data: function () {}
     data() {
@@ -89,6 +90,7 @@ createApp({
             },
             ],
             utenteSelezionato: null,
+            messaggioInviato: ""
         };
 
     },
@@ -97,6 +99,15 @@ createApp({
     },
     beforeMount() {
         this.utenteSelezionato = this.utenti[0]
+    },
+    nuovoMessaggioInviato() {
+        
+
+        this.utenteSelezionato.messages.push({
+            date: '10/01/2020 15:50:00',
+            message: this.messaggioInviato,
+            status: 'received'
+        })
     }
 
 
