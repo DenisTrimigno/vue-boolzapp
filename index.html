@@ -21,15 +21,15 @@
         <main>
             <div class=" sofnodo-cont-primario">
                 <div>
-                    <!-- navbar verde per intenderci -->
+                    <!-- navbar verde -->
                     <div class="sf-nav-verde">
                         <div class="row justify-content-center g-0">
                             <div class="col-10 d-flex contenitore-chat">
 
-                                <!-- contenitore utenti sx ----------------------------------------->
+                                <!-- contenitore utenti sx -->
                                 <div class="d-flex flex-column side-w">
 
-                                    <!-- navbar contenitore utenti ----------->
+                                    <!-- navbar contenitore utenti -->
                                     <div class="d-flex justify-content-between align-items-center bg-hat-nav px-2 py-1">
                                         <div>
                                             <img class="avatar-img" src="imgs/avatar_2.jpg" alt="">
@@ -92,7 +92,7 @@
                                     </div>
                                 </div>
 
-                                <!-- contenitore chat laterale dx ------------------------------------->
+                                <!-- contenitore chat laterale dx -->
                                 <div class="flex-grow-1 d-flex flex-column">
                                     <!-- nav chat -->
                                     <div
@@ -114,7 +114,7 @@
                                             <div class="messaggio-chat"
                                                 v-bind:class="{'messaggio-inviato' : oggettoMessaggio.status === 'sent'}"
                                                 v-for="(oggettoMessaggio) in utenteSelezionato.messages ">
-                                                <!-- v-for sopra  ----------------------------------------->
+                                                <!-- v-for sopra  -->
                                                 {{oggettoMessaggio.message}}
                                             </div>
                                         </div>
@@ -129,9 +129,9 @@
                                         </div>
 
                                         <div class="flex-grow-1">
-                                            <form class="">
+                                            <form class="" @submit.prevent="nuovoMessaggioInviato">
                                                 <input class="form-control form-control-sm " type="text" placeholder="invia messaggio, forse" aria-label=".form-control-sm example"
-                                                v-model="messaggioInviato" @submit.preventDefault="nuovoMessaggioInviato">
+                                                v-model="messaggioInviato" >
                                             </form>
                                         </div>
                                         <div>
@@ -152,7 +152,7 @@
     </div>
 
     <!-- javascript -->
-    <script src="./js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
